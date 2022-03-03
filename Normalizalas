@@ -1,0 +1,13 @@
+Egy R(A,F) relációséma 1. normálformában van, ha az A attribútum-halmaz minden eleme atomi, vagyis nem többértékű és nem összetett attribútum.
+Egy relációséma 2NF-ben van, ha minden másodlagos attribútum teljesen függ bármely kulcstól.
+Egy relációséma 3NF-ben van, ha minden másodlagos attribútuma közvetlenül függ bármely kulcstól.
+https://www.inf.u-szeged.hu/~gnemeth/kurzusok/adatbgyak/exe/Normalizalas_web/2_normlforma_2nf.html
+
+{userid}	->	{név, ~osztályid, születési.év, szülő.név, oktatási.azon, jelszo}
+{oktatoid}	->	{név, születési.év, oktatási.azon, jelszo}
+{osztalyid}	->	{megnevezés, ~oktatoid(osztályfőnök)}
+{forumid}	->	{mikor, ~oktatoid, mit(string)}
+{tantárgyakid}	->	{név, terem, idő, ~oktatoid, ~osztalyid}
+{bejegyzesid}	->	{hónap, ~tantárgyakid, ~userid, jegy}
+{hianyzasid}	->	{~userid, hónap, hiányzásérték}
+{penzid}	->	{~userid , teljesosszeg, befizetettosszeg}
