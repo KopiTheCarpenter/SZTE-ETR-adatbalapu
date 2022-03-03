@@ -1,0 +1,21 @@
+Diák/Szülö bejelentkezés:
+	Saját adatok megtekintése.
+	Órarend megtekintése.
+	Jegyek, átlag megtekintése.
+	Hiányzások megtekintése.
+	Fórum olvasása.
+	Pénzbefizetés(Tanár segítségével).
+???	Osztálytársak listázása.
+??? Osztálytársak átlagai -- rangsor
+??? Osztályátlag megtekintése -- összehasonlítás sajáttal
+
+
+Tanár bejelentkezés:
+	Saját adatok megtekintése.
+	Órarend megtekintése.
+???	Osztályfönök esetén saját osztály megtekintése.
+???	Osztályok listázása ->  Tantárgy választás -> Osztály választás -> Diák választás ->	Jegyek beírása.
+	jegyek modositása
+	Fórum üzenetek kiírása és olvasása.
+	Hiányzások bevitele.
+	Pénzbefizetés felvitele.
