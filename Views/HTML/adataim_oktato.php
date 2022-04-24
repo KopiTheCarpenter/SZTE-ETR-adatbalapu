@@ -11,6 +11,7 @@
 	<title>Adataim</title>
 	<link rel="stylesheet" href="../CSS/menu.css">
 	<link rel="stylesheet" href="../CSS/tablazat.css">
+	<link rel="stylesheet" href="../CSS/uj.css">
 	<script src="https://kit.fontawesome.com/9808ff4ccd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,27 +29,27 @@
 			<li><a class="active" href="jegyek_oktato.php">Jegyek</a></li>
 			<li><a class="active" href="hianyzasok_oktato.php">Hiányzások</a></li>
 			<li><a class="active" href="penzugyek_oktato.php">Pénzügyek</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
 	
 	<h1>Adataim</h1>
+    <button class="psw"><a href="jelszo_mod_oktato.php">Jelszó módosítása</a></button>
 	<table class="content-table">
 		<thead>
 			<tr>
 				<th>O.Azonosító</th>
 				<th>Név</th>
 				<th>Születési dátum</th>
-				
 			</tr>
 		</thead>
+			
         <?php
             $var = $controller->listDatas();
             $controller->listingMyDatas($var);
         ?>
 	</table>
-	<!--
-	</br> + jelszó módosítás
-	-->
+
+
 </body>
 </html>

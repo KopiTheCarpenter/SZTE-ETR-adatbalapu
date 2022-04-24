@@ -11,6 +11,7 @@
 	<title>Diakok</title>
 	<link rel="stylesheet" href="../CSS/menu.css">
 	<link rel="stylesheet" href="../CSS/tablazat.css">
+	<link rel="stylesheet" href="../CSS/uj.css">
 	<script src="https://kit.fontawesome.com/9808ff4ccd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,10 +29,11 @@
 			<li><a class="active" href="jegyek_oktato.php">Jegyek</a></li>
 			<li><a class="active" href="hianyzasok_oktato.php">Hiányzások</a></li>
 			<li><a class="active" href="penzugyek_oktato.php">Pénzügyek</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
-	
+</br></br>
+	<button class="psw"><a href="uj_diak.php">Új diák hozzáadása</a></button>
 	<h1>Diákok</h1>
 	<table class="content-table">
 		<thead>
@@ -41,6 +43,8 @@
 				<th>Születési dátum</th>
 				<th>Szülő neve</th>
 				<th>Osztály</th>
+				<th>(Módosít)</th>
+				<th>(Töröl)</th>
 			</tr>
 		</thead>
         <?php

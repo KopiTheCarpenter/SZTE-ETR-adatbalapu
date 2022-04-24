@@ -4,15 +4,15 @@
         private $password;
         private $connectString;
 
-        function get_username(){
+        protected function get_username(){
             return $this->username;
         }
 
-        function get_password(){
+        protected function get_password(){
             return $this->password;
         }
 
-        function get_connectString(){
+        protected function get_connectString(){
             return $this->connectString;
         }
 

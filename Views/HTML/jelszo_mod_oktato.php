@@ -1,16 +1,11 @@
-<?php
-    include_once "../../Controllers/jegyekController.php";
-    $controller = new Jegyekcontroller();
-    error_reporting(E_ERROR | E_PARSE);
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Jegyeim</title>
+	<title>jelszo_mod</title>
 	<link rel="stylesheet" href="../CSS/menu.css">
 	<link rel="stylesheet" href="../CSS/tablazat.css">
+	<link rel="stylesheet" href="../CSS/jelszo.css">
 	<script src="https://kit.fontawesome.com/9808ff4ccd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,22 +26,22 @@
             <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
-	
-	<h1>Jegyeim</h1>
-	<table class="content-table">
-		<thead>
-			<tr>
-				<th>Tantárgy</th>
-				<th>Hónap</th>
-				<th>Jegyek</th>
-				<th>Átlag</th>
-			</tr>
-		</thead>
-        <?php
-            $var = $controller->list_myDegrees();
-            $controller->fetchAll($var);
-        ?>
-	</table>
-	
+	<div class="center">
+		<h1 class="white">Jelszó módosítása</h1>
+		<form method="post">
+			<div class="txt_field">
+				<label for="username" class="white">Felhasználónév</label>
+				<input type="text" id="username" name="username" required>
+				</p>
+			</div>
+			<div class="txt_field">
+				<label for="password" class="white">Jelszó</label>
+				<input type="password" id="password" name="password" required>
+				</p>
+			</div>
+			</br>
+			<input type="submit" value="Módosít">	
+		</form>
+	</div>	
 </body>
 </html>

@@ -32,9 +32,11 @@
             echo "<tbody>";
             echo "<tr>";
             while ( $row = oci_fetch_array($var, OCI_ASSOC+OCI_RETURN_NULLS) ) {
-                echo "<td>" . $row["NEV"] . "</td>" .
+                echo "<td>" . $row["OKTATASIAZON"] . "</td>".
+                "<td>" . $row["NEV"] . "</td>" .
                 "<td>" . $row["SZULETESIEV"] . "</td>" .
-                "<td>" . $row["SZULONEVE"] . "</td>";
+                "<td>" . $row["SZULONEVE"] . "</td>" .
+                "<td>" . $row["MEGNEVEZES"] . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -48,9 +50,9 @@
                 echo "<td>" . $row["OKTATASIAZON"] . "</td>" .
                     "<td>" . $row["NEV"] . "</td>" .
                     "<td>" . $row["SZULETESIEV"] . "</td>" .
-                    "<td>" . $row["SZULONEVE"] . "</td>";
+                    "<td>" . $row["SZULONEVE"] . "</td>".
+                    "<td>" . $row["MEGNEVEZES"] . "</td>";
                 if($_SESSION["oktato"] == 1){
-                    echo "<td> <a href='oktatok_oktato.php'>  Felvesz  </a>  </td>";
                     echo "<td> <a href='oktatok_oktato.php'>  Módisít  </a>  </td>";
                     echo "<td> <a href='oktatok_oktato.php'>  Töröl  </a>  </td>";
                 }

@@ -1,9 +1,3 @@
-<?php
-    include_once "../../Controllers/forumController.php";
-    $controller = new Forumcontroller();
-    error_reporting(E_ERROR | E_PARSE);
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,21 +26,20 @@
             <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
-	</br>
-	<button class="psw"><a href="uj_forum_bejegyzes.php">Új bejegyzés írása</a></button>
-	<h1>Fórum</h1>
-    <table class="content-table">
-        <thead>
-        <tr>
-            <th>Mit</th>
-            <th>Mikor</th>
-        </tr>
-        </thead>
-        <?php
-            $var = $controller->list_all();
-            $controller->listingAllContent($var);
-        ?>
-    </table>
-	
+    <div class="center">
+		<h1 class="white">Fórum</h1>
+		<form method="post">
+            </br>
+			<div class="txt_field">
+				<label for="azon" class="white">Bejegyzés</label>
+				<input type="text" id="azon" name="azon" required>
+				</p>
+			</div>
+			</br>
+			<button class="btn">Hozzáad</button>
+            <button class="btn">Módosít</button>
+            <button class="btn">Töröl</button>
+		</form>
+	</div>	
 </body>
 </html>

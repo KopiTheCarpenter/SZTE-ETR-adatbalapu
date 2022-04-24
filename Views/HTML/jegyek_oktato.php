@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Jegybeiras</title>
+	<title>Jegyek</title>
 	<link rel="stylesheet" href="../CSS/lista.css">
 	<link rel="stylesheet" href="../CSS/menu.css">
 	<script src="https://kit.fontawesome.com/9808ff4ccd.js" crossorigin="anonymous"></script>
@@ -23,12 +23,12 @@
 			<li><a class="active" href="jegyek_oktato.php">Jegyek</a></li>
 			<li><a class="active" href="hianyzasok_oktato.php">Hiányzások</a></li>
 			<li><a class="active" href="penzugyek_oktato.php">Pénzügyek</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
 
 	<div class="center">
-		<h1>Jegybeírás <h1>
+		<h1>Jegyek <h1>
 		<form method="post">
 			<div class="list_name">
 				<label for="honap">Hónap:</label>
@@ -54,11 +54,13 @@
 					<option>Matek</option>
 				</select>				
 			</div>
+			<div>
+				<input type="submit" value="Mutat">
+			</div>
 			<div class="list_name">
 				<label for="jegy">Jegyek:</label>
 				<input type="text">
 			</div>
-			</br>
 			<input type="submit" value="Módosít">	
 		</form>
 	</div>	

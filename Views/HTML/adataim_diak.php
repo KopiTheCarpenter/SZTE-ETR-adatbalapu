@@ -11,6 +11,7 @@
 	<title>Adataim</title>
 	<link rel="stylesheet" href="../CSS/menu.css">
 	<link rel="stylesheet" href="../CSS/tablazat.css">
+	<link rel="stylesheet" href="../CSS/uj.css">
 	<script src="https://kit.fontawesome.com/9808ff4ccd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,27 +29,29 @@
 			<li><a class="active" href="jegyek_diak.php">Jegyeim</a></li>
 			<li><a class="active" href="hianyzasok_diak.php">Hiányzásaim</a></li>
 			<li><a class="active" href="penzugyek_diak.php">Pénzügyeim</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
 	
 	<h1>Adataim</h1>
-	<table class="content-table">
-		<thead>
-			<tr>
-				<th>Név</th>
-				<th>Születési dátum</th>
-				<th>Szülő neve</th>
-				<th>Osztály</th>
-			</tr>
-		</thead>
-        <?php
-            $var = $controller->listDatas();
-            $controller->listingMyDatas($var);
-        ?>
-	</table>
-	<!--
-	</br> + jelszó módosítás
-	-->
+	<button class="psw"><a href="jelszo_mod_diak.php">Jelszó módosítása</a></button>
+	<div>
+		<table class="content-table">
+			<thead>
+				<tr>
+					<th>O.azonosító</th>
+					<th>Név</th>
+					<th>Születési dátum</th>
+					<th>Szülő neve </th>
+					<th>Osztály</th>
+				</tr>
+			</thead>
+			<?php
+				$var = $controller->listDatas();
+				$controller->listingMyDatas($var);
+			?>
+		</table>
+	</div>
+	
 </body>
 </html>

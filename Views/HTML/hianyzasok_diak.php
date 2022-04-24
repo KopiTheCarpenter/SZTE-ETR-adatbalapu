@@ -1,3 +1,9 @@
+<?php
+    include_once "../../Controllers/hianyzasokController.php";
+    $controller = new Hianyzasokcontroller();
+    error_reporting(E_ERROR | E_PARSE);
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +28,7 @@
 			<li><a class="active" href="jegyek_diak.php">Jegyeim</a></li>
 			<li><a class="active" href="hianyzasok_diak.php">Hiányzásaim</a></li>
 			<li><a class="active" href="penzugyek_diak.php">Pénzügyeim</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
 	
@@ -34,12 +40,10 @@
 				<th>Hiányzások száma</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>január</td>
-				<td>5</td>
-			</tr>
-		</tbody>
+        <?php
+            $var = $controller->list_allMissing();
+            $controller->fetchAll($var);
+        ?>
 	</table>
 	
 </body>

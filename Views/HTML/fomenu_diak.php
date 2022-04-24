@@ -20,7 +20,7 @@
 			<li><a class="active" href="jegyek_diak.php">Jegyeim</a></li>
 			<li><a class="active" href="hianyzasok_diak.php">Hiányzásaim</a></li>
 			<li><a class="active" href="penzugyek_diak.php">Pénzügyeim</a></li>
-            <li><a class="active" href="../../Controllers/sessionHandler.php">Ki</a></li>
+            <li><a class="active" href="../../Controllers/sessionHandler.php">Kijelentkezés</a></li>
 		</ul>
 	</nav>
 

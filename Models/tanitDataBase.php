@@ -2,7 +2,7 @@
     include_once "connectDataBase.php";
 
     class Tanit extends DataBase{
-        function listAllDB(){
+        protected function listAllDB(){
             $sql = "SELECT * FROM TANIT";
             return oci_parse($this->connect(), $sql);
         }

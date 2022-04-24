@@ -2,7 +2,7 @@
     include_once "connectDataBase.php";
 
     class Hianyzik extends DataBase{
-        function listAllDB(){
+        protected function listAllDB(){
             $sql = "SELECT * FROM HIANYZIK";
             return oci_parse($this->connect(), $sql);
         }
