@@ -17,4 +17,8 @@
             }
             echo "</tbody>";
         }
+
+        function newReport($string){
+            return $this->newNews($string);
+        }
     }

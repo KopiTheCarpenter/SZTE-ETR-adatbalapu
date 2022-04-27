@@ -1,3 +1,9 @@
+<?php
+    include_once "../../Controllers/forumController.php";
+    $controller = new Forumcontroller();
+    error_reporting(E_ERROR | E_PARSE);
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +46,9 @@
             <button class="btn">Módosít</button>
             <button class="btn">Töröl</button>
 		</form>
+        <?php
+            $var = $controller->newReport($_POST["azon"]);
+        ?>
 	</div>	
 </body>
 </html>

@@ -1,3 +1,9 @@
+<?php
+    include_once "../../Controllers/penzugyController.php";
+    $controller = new Penzugycontroller();
+    error_reporting(E_ERROR | E_PARSE);
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,27 +36,28 @@
 	<div class="center">
 		<h1>Pénzügyek <h1>
 		<form method="post">
-			<div class="list_name">
-				<label for="osztaly">Osztály:</label>
-				<select>
-					<option>5a</option>
-				</select>
-			</div>
-			<div class="list_name">
-				<label for="diak">Diák:</label>
-				<select>
-					<option>Kiss Pista</option>
-				</select>
-			</div>
-			<input type="submit" value="Mutat">
-			<div class="list_name">
-				<label for="jegy">Befizetés:</label>
-				<input type="text">
-			</div>
-			</br>
-			<input type="submit" value="Módosít">	
+            <?php
+                $names = $controller->getAllNames();
+                $controller->renderView($names);
+            ?>
+                <input type='submit' name="list" value='Mutat'>
+            <div class='list_name'>
+                <label for='jegy'>Befizetés:</label>
+                <input type='text' name="ertek">
+            </div>
+            </br>
+                <input type='submit' name='create' value='Felvesz'>
 		</form>
-	</div>	
+	</div>
+    <?php
+        if(array_key_exists("list" , $_POST) && isset($_POST["nev"])){
+            $var = $controller->select($_POST["nev"]);
+            $controller->listSelectedData($var);
+        }
+        else if(array_key_exists("create", $_POST) && isset($_POST["nev"]) && !empty($_POST["ertek"])){
+            $controller->update($_POST["nev"], $_POST["ertek"]);
+        }
+    ?>
 
 </body>
 </html>

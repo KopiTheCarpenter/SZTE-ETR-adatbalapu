@@ -1,3 +1,9 @@
+<?php
+    include_once "../../Controllers/diakokController.php";
+    $controller = new Diakokcontroller();
+    error_reporting(E_ERROR | E_PARSE);
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +36,6 @@
     <div class="center">
 		<h1 class="white">Diák</h1>
 		<form method="post">
-            </br>
-			<div class="txt_field">
-				<label for="azon" class="white">Oktatási azonosító</label>
-				<input type="text" id="azon" name="azon" required>
-				</p>
-			</div>
 			</br>
             <div class="txt_field">
 				<label for="nev" class="white">Név</label>
@@ -50,8 +50,8 @@
 			</div>
             </br>
             <div class="txt_field">
-				<label for="sz.nev" class="white">Szülő neve</label>
-				<input type="text" id="sz.nev" name="sz.nev" required>
+				<label for="sznev" class="white">Szülő neve</label>
+				<input type="text" id="sznev" name="sznev" required>
 				</p>
 			</div>
             </br>
@@ -61,10 +61,13 @@
 				</p>
 			</div>
 			</br>
-			<button class="btn">Hozzáad</button>
-            <button class="btn">Módosít</button>
-            <button class="btn">Töröl</button>
+			<input class="btn" type="submit" name="create" value="Hozzáad"></input>
 		</form>
-	</div>	
+	</div>
+    <?php
+        if(array_key_exists('create' , $_POST)){
+            $controller->createStudent($_POST["nev"], $_POST["datum"], $_POST["sznev"]);
+        }
+    ?>
 </body>
 </html>

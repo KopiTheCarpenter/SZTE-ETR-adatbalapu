@@ -1,3 +1,9 @@
+<?php
+    include_once "../../Controllers/jegyekController.php";
+    $controller = new Jegyekcontroller();
+    error_reporting(E_ERROR | E_PARSE);
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,40 +36,33 @@
 	<div class="center">
 		<h1>Jegyek <h1>
 		<form method="post">
-			<div class="list_name">
-				<label for="honap">Hónap:</label>
-				<select>
-					<option>Január</option>
-				</select>
-			</div>
-			<div class="list_name">
-				<label for="osztaly">Osztály:</label>
-				<select>
-					<option>5a</option>
-				</select>
-			</div>
-			<div class="list_name">
-				<label for="diak">Diák:</label>
-				<select>
-					<option>Kiss Pista</option>
-				</select>
-			</div>
-			<div class="list_name">
-				<label for="tantargy">Tantárgy:</label>
-				<select>
-					<option>Matek</option>
-				</select>				
-			</div>
-			<div>
-				<input type="submit" value="Mutat">
-			</div>
-			<div class="list_name">
-				<label for="jegy">Jegyek:</label>
-				<input type="text">
-			</div>
-			<input type="submit" value="Módosít">	
+            <?php
+                $months = $controller->getAllMonths();
+                $students = $controller->getAllStudents();
+                $classes = $controller->getAllClasses();
+                $controller->renderView($months, $students, $classes );
+            ?>
+            <div>
+                <input type='submit' name = 'button1' value='Mutat'>
+            </div>
+            <div class='list_name'>
+                <label for='jegy'> Jegyek: </label>
+                <input type='text' name='ertek'>
+            </div>
+            <input type='submit' name = 'button2' value='Felvesz'>
 		</form>
-	</div>	
-
+	</div>
+        <?php
+            if(array_key_exists('button1', $_POST) && isset($_POST["honap"])  && isset($_POST["oktatasiazon"]) && isset($_POST["tantargynev"])){
+                $var2 = $controller->chosenStudent($_POST["honap"], $_POST["oktatasiazon"], $_POST["tantargynev"]);
+                $controller->listSelectedDatas($var2);
+            }
+            else if(array_key_exists('button2', $_POST) && isset($_POST["honap"]) && isset($_POST["oktatasiazon"]) && isset($_POST["tantargynev"]) && !empty($_POST["ertek"])){
+                $controller->createNewMark($_POST["ertek"], $_POST["honap"]);
+                $help = $controller->helpQuery($_POST["tantargynev"]);
+                $help2 = oci_execute($help);
+                $controller->createWho($_POST["oktatasiazon"], $help2);
+            }
+        ?>
 </body>
 </html>

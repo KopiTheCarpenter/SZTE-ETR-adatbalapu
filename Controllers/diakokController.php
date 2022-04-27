@@ -61,5 +61,11 @@
             echo "</tbody>";
         }
 
+        function createStudent($nev, $datum, $sznev){
+            return $this->createStudents($nev, $datum, $sznev);
+        }
 
+        function newClassMember($oktatasiazon, $osztaly){
+            return $this->createClassMember($oktatasiazon, $osztaly);
+        }
     }
